@@ -1,0 +1,48 @@
+package com.example.demo.entities;
+
+import java.io.Serializable;
+import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Evenement implements Serializable{
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private long id;
+    private Date dateStart;
+    private Date dateEnd;
+    private String lieu;
+    private String titre;
+    public Evenement() {}
+    public Evenement(long id, Date dateStart, Date dateEnd, String lieu, String titre) {
+        super();
+        this.id = id;
+        this.dateStart = dateStart;
+        this.dateEnd = dateEnd;
+        this.lieu = lieu;
+        this.titre = titre;
+    }
+    public long getId() {
+        return id;
+    }
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getLieu() {
+        return lieu;
+    }
+    public void setLieu(String lieu) {
+        this.lieu = lieu;
+    }
+    public String getTitre() {
+        return titre;
+    }
+    public void setTitre(String titre) {
+        this.titre = titre;
+    }
+}
